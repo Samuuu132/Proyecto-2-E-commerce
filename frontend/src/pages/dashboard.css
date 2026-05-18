@@ -25,23 +25,23 @@
 }
 
 .kpi-accent {
-    color: var(--accent);
+    color: #1e3932;
 }
 
 .kpi-success {
-    color: var(--success);
+    color: #588157;
 }
 
 .kpi-accent2 {
-    color: var(--accent2);
+    color: #3a5a40;
 }
 
 .kpi-warning {
-    color: var(--warning);
+    color: #a07830;
 }
 
 .kpi-danger {
-    color: var(--danger);
+    color: #c0392b;
 }
 
 .charts-row {

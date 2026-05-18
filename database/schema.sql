@@ -73,21 +73,21 @@ CREATE TABLE IF NOT EXISTS detalle_ventas (
 -- DATOS DE PRUEBA
 -- ============================================================
 
-INSERT INTO categorias (nombre, descripcion) VALUES
+INSERT OR IGNORE INTO categorias (nombre, descripcion) VALUES
     ('Electrónica',   'Dispositivos y gadgets electrónicos'),
     ('Ropa',          'Prendas de vestir y accesorios'),
     ('Alimentos',     'Productos alimenticios y bebidas'),
     ('Hogar',         'Artículos para el hogar'),
     ('Deportes',      'Equipamiento y ropa deportiva');
 
-INSERT INTO proveedores (nombre, contacto, telefono, email) VALUES
+INSERT OR IGNORE INTO proveedores (nombre, contacto, telefono, email) VALUES
     ('TechSupply S.A.',   'Juan Pérez',    '5555-1001', 'juan@techsupply.gt'),
     ('ModaGT',            'Ana García',    '5555-2002', 'ana@modagt.com'),
     ('FoodDistrib',       'Carlos López',  '5555-3003', 'carlos@fooddistrib.gt'),
     ('HogarPlus',         'María Martín',  '5555-4004', 'maria@hogarplus.gt'),
     ('SportZone',         'Pedro Ruiz',    '5555-5005', 'pedro@sportzone.gt');
 
-INSERT INTO productos (nombre, descripcion, precio, stock, categoria_id, proveedor_id) VALUES
+INSERT OR IGNORE INTO productos (nombre, descripcion, precio, stock, categoria_id, proveedor_id) VALUES
     ('Auriculares Bluetooth',  'Inalámbricos, cancelación de ruido',  299.99, 50, 1, 1),
     ('Teclado Mecánico',       'RGB, switches táctiles',              449.00, 30, 1, 1),
     ('Camiseta Deportiva',     'Tela transpirable, talla M',           89.50, 100, 2, 2),
@@ -99,30 +99,29 @@ INSERT INTO productos (nombre, descripcion, precio, stock, categoria_id, proveed
     ('Balón de Fútbol',        'Cuero sintético, talla 5',            120.00,  80, 5, 5),
     ('Guantes de Box',         '12oz, cuero genuino',                 180.00,  45, 5, 5);
 
-INSERT INTO clientes (nombre, email, telefono, direccion) VALUES
+INSERT OR IGNORE INTO clientes (nombre, email, telefono, direccion) VALUES
     ('Sofía Ramírez',  'sofia@email.com',   '5501-1111', 'Zona 10, Guatemala'),
     ('Diego Morales',  'diego@email.com',   '5502-2222', 'Zona 15, Guatemala'),
     ('Valeria Torres', 'vale@email.com',    '5503-3333', 'Mixco, Guatemala'),
     ('Andrés Castro',  'andres@email.com',  '5504-4444', 'Villa Nueva, Guatemala'),
     ('Lucía Fuentes',  'lucia@email.com',   '5505-5555', 'Zona 1, Guatemala');
 
-INSERT INTO empleados (nombre, cargo, email, password) VALUES
+INSERT OR IGNORE INTO empleados (nombre, cargo, email, password) VALUES
     ('Roberto Sánchez', 'Vendedor',  'roberto@tienda.gt', 'secret'),
     ('Mónica Vega',     'Cajera',    'monica@tienda.gt',  'secret'),
     ('Ernesto Lima',    'Supervisor','ernesto@tienda.gt', 'secret');
 
--- Ventas de ejemplo
-INSERT INTO ventas (cliente_id, empleado_id, fecha, total) VALUES
+INSERT OR IGNORE INTO ventas (cliente_id, empleado_id, fecha, total) VALUES
     (1, 1, '2026-05-01 10:30:00', 389.49),
     (2, 2, '2026-05-02 14:00:00', 648.00),
     (3, 1, '2026-05-03 09:15:00', 100.00),
     (4, 3, '2026-05-10 11:00:00', 530.00),
     (5, 2, '2026-05-12 16:45:00', 294.50);
 
-INSERT INTO detalle_ventas (venta_id, producto_id, cantidad, precio_unit) VALUES
+INSERT OR IGNORE INTO detalle_ventas (venta_id, producto_id, cantidad, precio_unit) VALUES
     (1, 1, 1, 299.99),
     (1, 5, 1,  75.00),
-    (1, 6, 1,  25.00),  -- venta 1 total ~400, ajustado arriba
+    (1, 6, 1,  25.00),
     (2, 2, 1, 449.00),
     (2, 7, 1, 159.00),
     (3, 9, 1, 100.00),
