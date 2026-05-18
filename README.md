@@ -29,9 +29,9 @@ docker compose up --build
 
 | Servicio | URL |
 |----------|-----|
-| Frontend | http://localhost |
-| Backend  | http://localhost:8000 |
-| API Docs | http://localhost:8000/docs |
+| Frontend | https://proyecto-2-e-commerce-1.onrender.com |
+| Backend  | https://proyecto-2-e-commerce.onrender.com |
+| API Docs | https://proyecto-2-e-commerce.onrender.com/docs |
 
 > La base de datos se inicializa automáticamente con el esquema
 > y datos de prueba al primer arranque.
