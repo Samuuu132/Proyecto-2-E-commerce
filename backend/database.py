@@ -4,6 +4,8 @@ from pathlib import Path
 
 DB_PATH = os.getenv("DB_PATH", "/data/tienda.db")
 SCHEMA_PATH = Path(__file__).parent.parent / "database" / "schema.sql"
+if not SCHEMA_PATH.exists():
+    SCHEMA_PATH = Path(__file__).parent / ".." / "database" / "schema.sql"
 
 def get_connection():
     conn = sqlite3.connect(DB_PATH)
